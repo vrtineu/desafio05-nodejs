@@ -1,12 +1,14 @@
 import {
-  Connection, createConnection, getRepository, Repository,
+  Connection,
+  createConnection,
+  getRepository,
+  Repository,
 } from 'typeorm';
 
 import { Game } from '../modules/games/entities/Game';
-import { User } from '../modules/users/entities/User';
-
-import { UsersRepository } from '../modules/users/repositories/implementations/UsersRepository';
 import { GamesRepository } from '../modules/games/repositories/implementations/GamesRepository';
+import { User } from '../modules/users/entities/User';
+import { UsersRepository } from '../modules/users/repositories/implementations/UsersRepository';
 
 const usersSeed: User[] = [
   {
@@ -164,7 +166,9 @@ describe('Repositories', () => {
   it('[GamesRepository] should be able find a game by entire or partial given title', async () => {
     const result1 = await gamesRepository.findByTitleContaining('of u');
     const result2 = await gamesRepository.findByTitleContaining('eed');
-    const result3 = await gamesRepository.findByTitleContaining('rocket league');
+    const result3 = await gamesRepository.findByTitleContaining(
+      'rocket league'
+    );
 
     expect(result1).toEqual([
       expect.objectContaining({

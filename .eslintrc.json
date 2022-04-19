@@ -76,13 +76,7 @@
           "**/*.spec.js"
         ]
       }
-    ],
-    "indent": "off",
-    "@typescript-eslint/indent": [
-      "error",
-      2
-    ],
-    "prettier/prettier": "error"
+    ]
   },
   "settings": {
     "import/resolver": {
